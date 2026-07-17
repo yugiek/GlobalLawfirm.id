@@ -1,1 +1,7 @@
+title: Global Lawfirm
+description: "Full Service Legal Solutions terpadu bagi individu, korporasi, PMA, lembaga, hingga instansi pemerintah."
+url: ""
+baseurl: ""
 
+# Pengaturan agar Markdown diproses dengan rapi
+markdown: kramdown
