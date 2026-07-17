@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -108,7 +110,8 @@
             max-width: 800px; margin: 0 auto; text-align: center; padding: 50px; border: 1px solid rgba(255,255,255,0.1);
             border-radius: 4px; background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(201, 168, 76, 0.02) 100%);
         }
-        .team-container h3 { font-family: var(--font-heading); font-size: 32px; color: var(--gold); margin-bottom: 15px; }
+        .team-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); margin-bottom: 20px; }
+        .team-container h3 { font-family: var(--font-heading); font-size: 32px; color: var(--gold); margin-bottom: 10px; }
         .team-container p.degree { color: var(--text-light); font-size: 16px; font-weight: 600; line-height: 1.8; letter-spacing: 0.5px; }
 
         /* CONTACT SECTION */
@@ -288,35 +291,18 @@
         </div>
         
         <div class="articles-grid">
+            <!-- Kode otomatis Jekyll untuk memanggil 3 artikel terbaru -->
+            {% for post in site.posts limit:3 %}
             <div class="article-card">
-                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=600&auto=format&fit=crop" alt="Gambar Materi" class="article-img">
+                <img src="{{ post.image }}" alt="Gambar Materi" class="article-img">
                 <div class="article-content">
-                    <span class="article-meta">10 Juli 2026 • Corporate Business</span>
-                    <h3 class="article-title">Penyelesaian Sengketa Kontrak Kerjasama Multinasional</h3>
-                    <p class="article-excerpt">Membahas langkah-langkah mediasi dan mitigasi risiko hukum dalam sengketa kontrak bisnis lintas negara secara komprehensif.</p>
-                    <a href="#" class="read-more">Baca Selengkapnya &rarr;</a>
+                    <span class="article-meta">{{ post.date | date: "%d %b %Y" }} • {{ post.category }}</span>
+                    <h3 class="article-title">{{ post.title }}</h3>
+                    <p class="article-excerpt">{{ post.content | strip_html | truncatewords: 20 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="read-more">Baca Selengkapnya &rarr;</a>
                 </div>
             </div>
-
-            <div class="article-card">
-                <img src="https://images.unsplash.com/photo-1505664159854-232618df3632?q=80&w=600&auto=format&fit=crop" alt="Gambar Materi" class="article-img">
-                <div class="article-content">
-                    <span class="article-meta">05 Juli 2026 • Curator & Manager</span>
-                    <h3 class="article-title">Prosedur PKPU dan Perlindungan Aset Perusahaan</h3>
-                    <p class="article-excerpt">Panduan taktis mengenai bagaimana manajemen dan kurator bekerja sama mengamankan aset perusahaan selama masa penundaan utang.</p>
-                    <a href="#" class="read-more">Baca Selengkapnya &rarr;</a>
-                </div>
-            </div>
-
-            <div class="article-card">
-                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=600&auto=format&fit=crop" alt="Gambar Materi" class="article-img">
-                <div class="article-content">
-                    <span class="article-meta">28 Juni 2026 • Criminal Lawyer</span>
-                    <h3 class="article-title">Hak-Hak Tersangka dalam Proses Peradilan Pidana</h3>
-                    <p class="article-excerpt">Pemahaman mendalam mengenai batasan dan perlindungan hukum bagi klien yang sedang menghadapi penyelidikan atau penyidikan pidana.</p>
-                    <a href="#" class="read-more">Baca Selengkapnya &rarr;</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <div class="btn-container">
@@ -332,6 +318,7 @@
         </div>
         
         <div class="team-container">
+            <img src="https://www.image2url.com/r2/default/images/1784260817069-b639d225-111f-4709-b1ea-3e6f197abc37.png" alt="Indra Setiawan" class="team-img">
             <h3>Indra Setiawan</h3>
             <p class="degree">S.T., S.H., M.H., Ph.D., CTLC., CMLC., Mediator, Kurator-Pengurus.</p>
         </div>
@@ -366,9 +353,6 @@
             const cards = document.querySelectorAll('.service-card');
             cards.forEach(card => {
                 card.addEventListener('click', function() {
-                    // Tutup kartu lain yang sedang terbuka jika diinginkan (opsional)
-                    // cards.forEach(c => { if(c !== this) { c.classList.remove('active'); c.querySelector('.service-details').style.maxHeight = null; c.querySelector('.card-toggle').innerText = "LIHAT DETAIL +"; } });
-
                     this.classList.toggle('active');
                     const details = this.querySelector('.service-details');
                     const toggleBtn = this.querySelector('.card-toggle');
