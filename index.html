@@ -59,7 +59,8 @@
         /* HERO SECTION */
         .hero {
             position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; padding: 0 60px;
-            background: url('https://www.image2url.com/r2/default/images/1784215208105-97efabc3-e1f4-412a-a373-053ee6094c2b.png') center/cover no-repeat;
+            /* SUMBER GAMBAR LOKAL: Pastikan upload gambar bernama hero-bg.jpg ke dalam folder images */
+            background: url('images/hero-bg.jpg') center/cover no-repeat;
         }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(13, 17, 23, 0.9) 0%, rgba(13, 17, 23, 0.6) 50%, rgba(13, 17, 23, 0.2) 100%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 600px; margin-top: 50px; }
@@ -168,9 +169,11 @@
         </a>
         <nav>
             <ul>
-                <li><a onclick="showPage('view-home')" class="nav-btn active-link">Home</a></li>
+                <!-- PERUBAHAN NAVIGASI -->
+                <li><a onclick="showPage('view-home')" class="nav-btn active-link">Beranda</a></li>
                 <li><a onclick="showPage('view-layanan')" class="nav-btn">Layanan</a></li>
-                <li><a onclick="showPage('view-kasus')" class="nav-btn">Kasus</a></li>
+                <li><a onclick="showPage('view-studi-kasus')" class="nav-btn">Studi Kasus</a></li>
+                <li><a onclick="showPage('view-artikel')" class="nav-btn">Artikel</a></li>
                 <li><a onclick="showPage('view-tim')" class="nav-btn">Tim Kami</a></li>
                 
                 <!-- CUSTOM ID | EN TOGGLE -->
@@ -193,9 +196,9 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <span class="eyebrow">Kantor Hukum</span>
+                <span class="eyebrow">Full Service Legal Solutions</span>
                 <h1>GLOBAL LAWFIRM</h1>
-                <p>Solusi terbaik bagi para pencari keadilan. Kami hadir memberikan pendampingan hukum baik litigasi maupun non-litigasi secara cermat, profesional, dan menjunjung tinggi etika moral.</p>
+                
                 <a onclick="showPage('view-layanan')" class="btn btn-gold" style="margin-top:20px;">Layanan Kami</a>
             </div>
         </section>
@@ -219,49 +222,25 @@
             <div class="services-grid">
                 <div class="service-card" onclick="showPage('view-layanan')" style="cursor: pointer;">
                     <div>
-                        <h3>Litigasi, ADR & Pendampingan</h3>
-                        <p class="card-desc">Penyelesaian sengketa hukum pidana/perdata, MK, Arbitrase, hingga pendampingan di kepolisian dan peradilan.</p>
+                        <h3>Litigation & Dispute Resolution</h3>
+                        <p class="card-desc">Pendampingan komprehensif mulai dari perdata, pidana, niaga, pajak, hingga sengketa di Mahkamah Konstitusi dan Arbitrase.</p>
                     </div>
                 </div>
                 <div class="service-card" onclick="showPage('view-layanan')" style="cursor: pointer;">
                     <div>
-                        <h3>Corporate, Investment & HKI</h3>
-                        <p class="card-desc">Pendirian PT/PMA, merger, penyusunan kontrak (MoU/NDA), hingga pendaftaran dan perlindungan hak kekayaan intelektual.</p>
+                        <h3>Corporate & Commercial Law</h3>
+                        <p class="card-desc">Layanan pendirian badan usaha, M&A, uji tuntas hukum, kepatuhan korporasi, hingga restrukturisasi.</p>
                     </div>
                 </div>
                 <div class="service-card" onclick="showPage('view-layanan')" style="cursor: pointer;">
                     <div>
-                        <h3>One-Stop Tax & Accounting</h3>
-                        <p class="card-desc">Perencanaan pajak, pembukuan, pelaporan SPT, pendampingan pemeriksaan, hingga litigasi & sengketa pajak secara menyeluruh.</p>
+                        <h3>White Collar Crime & Criminal Defense</h3>
+                        <p class="card-desc">Pembelaan pidana khusus termasuk korupsi, TPPU, cyber crime, serta investigasi internal korporasi.</p>
                     </div>
                 </div>
             </div>
             <div class="btn-container">
-                <a onclick="showPage('view-layanan')" class="btn btn-gold">Lihat Semua 6 Pilar Layanan &rarr;</a>
-            </div>
-        </section>
-
-        <!-- Spoiler: Kasus -->
-        <section class="kasus-section section-padding">
-            <div class="section-header">
-                <span class="eyebrow">Publikasi Terkini</span>
-                <h2>Materi & Studi Kasus</h2>
-            </div>
-            <div class="articles-grid">
-                {% for post in site.posts limit:3 %}
-                <div class="article-card">
-                    <img src="{{ post.image }}" alt="Gambar Materi" class="article-img">
-                    <div class="article-content">
-                        <span class="article-meta">{{ post.date | date: "%d %b %Y" }} • {{ post.category }}</span>
-                        <h3 class="article-title">{{ post.title }}</h3>
-                        <p class="article-excerpt">{{ post.content | strip_html | truncatewords: 20 }}</p>
-                        <a href="{{ post.url | relative_url }}" class="read-more">Baca Selengkapnya &rarr;</a>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="btn-container">
-                <a onclick="showPage('view-kasus')" class="btn btn-gold">Lihat Semua Publikasi &rarr;</a>
+                <a onclick="showPage('view-layanan')" class="btn btn-gold">Lihat Semua 32 Area Praktik &rarr;</a>
             </div>
         </section>
 
@@ -286,127 +265,569 @@
     </div>
 
     <!-- ==========================================
-         HALAMAN 2: LAYANAN FULL 
+         HALAMAN 2: LAYANAN FULL (32 LAYANAN TERBARU)
          ========================================== -->
     <div id="view-layanan" class="page-view">
         <div class="page-header">
             <h1>Layanan Hukum Kami</h1>
-            <p>"Full Service Legal & Tax Solutions terpadu bagi individu, korporasi, PMA, lembaga, hingga instansi pemerintah."</p>
+            <p>Layanan terpadu bagi individu, perusahaan nasional, PMA, investor asing, lembaga, dan instansi pemerintah, mulai dari konsultasi, penyusunan dokumen hukum, kepatuhan, hingga pendampingan dalam penyelesaian sengketa di semua tingkatan peradilan.</p>
         </div>
         
         <section class="services-section section-padding">
             <div class="services-grid">
                 
+                <!-- 1 -->
                 <div class="service-card expandable-card">
                     <div>
-                        <h3>Litigasi, ADR & Pendampingan</h3>
-                        <p class="card-desc">Fokus pada penyelesaian sengketa umum dan pidana, baik melalui pengadilan maupun alternatif mediasi.</p>
+                        <h3>1. Litigation & Dispute Resolution</h3>
+                        <p class="card-desc">Pendampingan penuh untuk litigasi dan penyelesaian sengketa di semua tingkatan peradilan dan alternatif penyelesaian.</p>
                         <span class="card-toggle">LIHAT DETAIL +</span>
                         <div class="service-details">
                             <ul>
-                                <li>Penyelesaian Perkara Perdata, Pidana, PTUN, PHI, Niaga & Agama</li>
-                                <li>Sengketa Mahkamah Konstitusi & Arbitrase Nasional/Internasional</li>
-                                <li>Jalur alternatif Mediasi, Konsiliasi, dan Negosiasi (ADR)</li>
-                                <li>Pendampingan di Kepolisian, Kejaksaan, dan Pengadilan</li>
-                                <li>Somasi, Gugatan, Banding, Kasasi & PK</li>
-                                <li>Pelaksanaan Sita Eksekusi, Lelang, dan Pengosongan</li>
+                                <li>Litigasi Perdata, Pidana, Niaga, PTUN, PHI, Pajak</li>
+                                <li>Litigasi Kepailitan dan PKPU</li>
+                                <li>Kasasi, Peninjauan Kembali (PK), Mahkamah Agung & MK</li>
+                                <li>Arbitrase Nasional/Internasional, Mediasi, Negosiasi</li>
                             </ul>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Litigasi%2C%20ADR%2C%20dan%20Pendampingan%20Hukum.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi via WhatsApp</a>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Litigasi%20dan%20Penyelesaian%20Sengketa." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
                 </div>
 
+                <!-- 2 -->
                 <div class="service-card expandable-card">
                     <div>
-                        <h3>Corporate, Investment & HKI</h3>
-                        <p class="card-desc">Fokus pada pendirian legalitas bisnis, investasi, dan perlindungan aset kekayaan intelektual perusahaan.</p>
+                        <h3>2. Corporate & Commercial Law</h3>
+                        <p class="card-desc">Pendirian badan usaha, aksi korporasi (M&A), dan tata kelola perusahaan yang baik (GCG).</p>
                         <span class="card-toggle">LIHAT DETAIL +</span>
                         <div class="service-details">
                             <ul>
-                                <li>Pendirian PT, PMA, CV, Yayasan, dan Perkumpulan</li>
-                                <li>Pendampingan Akuisisi, Merger, Spin-off & Joint Venture</li>
-                                <li>Corporate Secretary & Penyusunan RUPS/Kebijakan</li>
-                                <li>Penyusunan, Review & Negosiasi Kontrak (MoU, NDA)</li>
-                                <li>Perizinan Usaha PMA, LKPM & Exit Strategy Investor</li>
-                                <li>Pendaftaran & Sengketa Merek, Hak Cipta, Paten, Desain & Lisensi</li>
+                                <li>Pendirian PT PMA/PMDN, CV, Firma, Yayasan, Perkumpulan</li>
+                                <li>Legal Opinion, Legal Audit, Due Diligence</li>
+                                <li>Corporate Secretary, Compliance, GCG</li>
+                                <li>Merger, Akuisisi, Konsolidasi, Spin-Off, Likuidasi</li>
                             </ul>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Corporate%2C%20Investment%2C%20dan%20legalitas%20HKI.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi via WhatsApp</a>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Korporasi%20dan%20Bisnis." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
                 </div>
 
+                <!-- 3 -->
                 <div class="service-card expandable-card">
                     <div>
-                        <h3>Kepailitan & Ketenagakerjaan</h3>
-                        <p class="card-desc">Fokus pada isu kelangsungan usaha (PKPU), penyelesaian utang, dan penyelesaian hubungan industrial.</p>
+                        <h3>3. Investment Law</h3>
+                        <p class="card-desc">Layanan menyeluruh terkait perizinan penanaman modal dan restrukturisasi investasi.</p>
                         <span class="card-toggle">LIHAT DETAIL +</span>
                         <div class="service-details">
                             <ul>
-                                <li>Permohonan Pailit & Penundaan Kewajiban (PKPU)</li>
-                                <li>Pendampingan untuk Kurator, Kreditur maupun Debitur</li>
-                                <li>Restrukturisasi Utang & Sengketa Perkara Niaga</li>
-                                <li>Perlindungan Aset (Asset Protection)</li>
-                                <li>Penyusunan PKWT/PKWTT, Peraturan Perusahaan & PKB</li>
-                                <li>Penanganan PHK & Perselisihan Hubungan Industrial</li>
+                                <li>PT PMA dan PT PMDN</li>
+                                <li>OSS-RBA, NIB, LKPM</li>
+                                <li>Perizinan Berbasis Risiko dan Investasi (BKPM)</li>
+                                <li>Restrukturisasi Investasi</li>
                             </ul>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20membutuhkan%20bantuan%20dan%20ingin%20berkonsultasi%20mengenai%20penyelesaian%20masalah%20Kepailitan%20%2F%20Ketenagakerjaan.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi via WhatsApp</a>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Penanaman%20Modal." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
                 </div>
 
+                <!-- 4 -->
                 <div class="service-card expandable-card">
                     <div>
-                        <h3>Pertanahan & Perizinan</h3>
-                        <p class="card-desc">Fokus pada pengurusan legalitas aset fisik (tanah/properti) dan perizinan operasional sektoral.</p>
+                        <h3>4. Bankruptcy, Suspension of Debt Payment & Insolvency</h3>
+                        <p class="card-desc">Penanganan perkara kepailitan, PKPU, restrukturisasi utang, serta pendampingan Kurator/Pengurus.</p>
                         <span class="card-toggle">LIHAT DETAIL +</span>
                         <div class="service-details">
                             <ul>
-                                <li>Pemeriksaan dokumen & Sengketa Sertifikat Lahan</li>
-                                <li>Proses Jual Beli Tanah, Hibah, dan Waris</li>
-                                <li>Pemecahan, Penggabungan & Pengurusan Hak atas Tanah</li>
-                                <li>Pendampingan Legalitas di kantor BPN</li>
-                                <li>Pengurusan Perizinan melalui OSS dan NIB</li>
-                                <li>Sertifikasi, Izin Lingkungan & Perizinan Sektor Khusus</li>
+                                <li>Permohonan Kepailitan & PKPU</li>
+                                <li>Pendampingan Debitor/Kreditor, Restrukturisasi Utang</li>
+                                <li>Proposal Perdamaian, Verifikasi Piutang, Actio Pauliana</li>
+                                <li>Pendampingan Kurator/Pengurus & Cross-Border Insolvency</li>
                             </ul>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Sengketa%20Pertanahan%20%2F%20Pengurusan%20Perizinan.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi via WhatsApp</a>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Kepailitan%20dan%20PKPU." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
                 </div>
 
+                <!-- 5 -->
                 <div class="service-card expandable-card">
                     <div>
-                        <h3>Audit, Compliance & Investigasi</h3>
-                        <p class="card-desc">Fokus pada mitigasi risiko, kepatuhan hukum perusahaan, dan investigasi internal.</p>
+                        <h3>5. Immigration & Foreign Nationals</h3>
+                        <p class="card-desc">Layanan keimigrasian lengkap untuk tenaga kerja asing (TKA), investor, dan kepatuhan imigrasi.</p>
                         <span class="card-toggle">LIHAT DETAIL +</span>
                         <div class="service-details">
                             <ul>
-                                <li>Konsultasi, Legal Opinion & Legal Memorandum</li>
-                                <li>Legal Due Diligence (Audit Hukum) & Analisis Risiko</li>
-                                <li>Kepatuhan Anti Pencucian Uang (APU/PPT) & Anti Korupsi</li>
-                                <li>Good Corporate Governance (GCG) & SOP Perusahaan</li>
-                                <li>Internal Investigation & Fraud Investigation</li>
-                                <li>Asset Tracing & Digital Evidence Review</li>
+                                <li>Visa, KITAS, KITAP, Visa Investor/Kerja/Bisnis</li>
+                                <li>EPO, Re-Entry Permit, Deportasi, Cekal</li>
+                                <li>Naturalisasi, TKA, RPTKA</li>
                             </ul>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Audit%20Hukum%2C%20Compliance%2C%20dan%20Investigasi.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi via WhatsApp</a>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Keimigrasian%20dan%20WNA." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
                 </div>
 
+                <!-- 6 -->
                 <div class="service-card expandable-card">
                     <div>
-                        <h3>One-Stop Tax & Accounting</h3>
-                        <p class="card-desc">Layanan terpadu perpajakan mulai dari perencanaan, administrasi, hingga penyelesaian sengketa di pengadilan.</p>
+                        <h3>6. Intellectual Property (HKI)</h3>
+                        <p class="card-desc">Pendaftaran dan penyelesaian sengketa hak kekayaan intelektual (merek, paten, hak cipta).</p>
                         <span class="card-toggle">LIHAT DETAIL +</span>
                         <div class="service-details">
                             <ul>
-                                <li><b>Perencanaan Pajak:</b> Tax planning, evaluasi risiko, restrukturisasi & Transfer Pricing.</li>
-                                <li><b>Administrasi & Kepatuhan:</b> Pembukuan, rekonsiliasi fiskal, lapor SPT (PPh 21/23/25, PPN, SPT 1771).</li>
-                                <li><b>Pendampingan Pemeriksaan:</b> Bantuan dokumen, negosiasi teknis & Closing Conference dengan DJP.</li>
-                                <li><b>Sengketa Pajak:</b> Penyusunan keberatan, banding, gugatan, PK Mahkamah Agung & pidana pajak.</li>
+                                <li>Hak Merek, Hak Cipta, Paten, Desain Industri</li>
+                                <li>Rahasia Dagang, Indikasi Geografis, DTLST</li>
+                                <li>Lisensi HKI dan Waralaba (Franchise)</li>
+                                <li>Sengketa Hak Kekayaan Intelektual</li>
                             </ul>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Pajak%2C%20Administrasi%2C%20atau%20Penyelesaian%20Sengketa%20Pajak.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi via WhatsApp</a>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hak%20Kekayaan%20Intelektual." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 7 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>7. Tax Law</h3>
+                        <p class="card-desc">Layanan hukum pajak terpadu mulai dari perencanaan, kajian, audit, hingga litigasi perpajakan.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Tax Planning, Tax Review, Tax Due Diligence</li>
+                                <li>Pemeriksaan Pajak, Keberatan, Banding, Gugatan</li>
+                                <li>Restitusi Pajak & Pendampingan Penyidikan Pajak</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Pajak." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 8 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>8. Land, Property & Real Estate</h3>
+                        <p class="card-desc">Penyelesaian status hukum pertanahan, akuisisi properti, dan perlindungan aset real estat.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>SHM, HGB, HGU, Hak Pakai</li>
+                                <li>Due Diligence Pertanahan, Akuisisi Properti</li>
+                                <li>Pengadaan Tanah & Sengketa BPN</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Pertanahan%20dan%20Properti." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 9 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>9. Employment & Industrial Relations</h3>
+                        <p class="card-desc">Pendampingan ketenagakerjaan bagi korporasi maupun penyelesaian perselisihan industrial.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>PKWT dan PKWTT</li>
+                                <li>PHK & Perselisihan Hubungan Industrial (PHI)</li>
+                                <li>Peraturan Perusahaan & Perjanjian Kerja Bersama (PKB)</li>
+                                <li>Audit Ketenagakerjaan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Ketenagakerjaan." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 10 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>10. Family, Estate Planning & Private Client</h3>
+                        <p class="card-desc">Layanan eksklusif hukum keluarga, perencanaan pewarisan, dan perlindungan kekayaan (wealth protection).</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Perceraian, Harta Gono-Gini, Hak Asuh, Adopsi</li>
+                                <li>Waris (KUHPerdata/Islam), Wasiat, Hibah, Sengketa Waris</li>
+                                <li>Estate Planning, Family Wealth Protection, Family Office</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Keluarga%20dan%20Waris." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 11 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>11. White Collar Crime & Criminal Defense</h3>
+                        <p class="card-desc">Pembelaan hukum tingkat tinggi untuk kejahatan kerah putih dan tindak pidana korporasi.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Pendampingan Tersangka/Saksi/Korban (Penyidikan s.d Persidangan)</li>
+                                <li>Tindak Pidana Korupsi, TPPU, Perbankan, Pajak, Pasar Modal</li>
+                                <li>Cyber Crime, Penipuan, Penggelapan, Kejahatan Korporasi</li>
+                                <li>Fraud/Internal Investigation & Asset Recovery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Pidana%20Korporasi." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 12 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>12. Interpol, Extradition & International Criminal</h3>
+                        <p class="card-desc">Penanganan perkara pidana lintas negara, red notice, dan proses ekstradisi internasional.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Pendampingan Red, Blue, Green, Yellow, hingga Black Notice</li>
+                                <li>CCF & Permohonan Penghapusan Red Notice</li>
+                                <li>Ekstradisi, MLA, International Asset Recovery</li>
+                                <li>Cross Border Investigation & International Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Pidana%20Internasional%20dan%20Interpol." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 13 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>13. Banking, Finance & Capital Market</h3>
+                        <p class="card-desc">Kepatuhan perbankan, instrumen pasar modal, serta solusi restrukturisasi pendanaan.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Kredit Investasi/Modal Kerja, Hak Tanggungan, Fidusia, Hipotek</li>
+                                <li>Bank Garansi, L/C, Restrukturisasi Kredit</li>
+                                <li>IPO, Right Issue, Obligasi, Sukuk, Reksa Dana, Akuisisi Emiten</li>
+                                <li>Kepatuhan Otoritas Jasa Keuangan (OJK)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Perbankan%20dan%20Pasar%20Modal." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 14 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>14. Energy, Mining, Infrastructure & Construction</h3>
+                        <p class="card-desc">Akselerasi kepatuhan hukum untuk megaproyek infrastruktur, sumber daya alam, dan konstruksi.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>EPC, FIDIC Contract, Tender Pemerintah, Sengketa Konstruksi</li>
+                                <li>Minyak & Gas Bumi (Migas), Pertambangan, Batubara</li>
+                                <li>Energi Terbarukan, Pembangkit Listrik, Jalan Tol, Pelabuhan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Energi,%20Infrastruktur,%20dan%20Konstruksi." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 15 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>15. Arbitration & Alternative Dispute Resolution</h3>
+                        <p class="card-desc">Resolusi sengketa non-litigasi di badan arbitrase nasional (BANI) dan lembaga arbitrase internasional.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>BANI (Nasional)</li>
+                                <li>Internasional: SIAC, ICC, HKIAC, LCIA, UNCITRAL</li>
+                                <li>Mediasi, Negosiasi, Konsiliasi, Expert Determination, Dispute Board</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Arbitrase%20dan%20Penyelesaian%20Sengketa." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 16 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>16. Compliance, Investigation & Risk Management</h3>
+                        <p class="card-desc">Mitigasi risiko korporasi, anti pencucian uang, dan audit kepatuhan perusahaan secara menyeluruh.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Compliance Audit, Corporate Governance Review</li>
+                                <li>AML, CFT, KYC, CDD, EDD (Anti Pencucian Uang)</li>
+                                <li>Investigasi Internal/Fraud/Korporasi, Whistleblowing</li>
+                                <li>Enterprise Risk Management & Fraud Risk Assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Kepatuhan,%20Investigasi,%20dan%20Manajemen%20Risiko." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 17 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>17. Corporate Governance, SOP & ISO Advisory</h3>
+                        <p class="card-desc">Perancangan SOP operasional dan pendampingan sertifikasi ISO untuk menjamin mutu perusahaan.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Penyusunan SOP (Keuangan, HR, Produksi, Legal, dll)</li>
+                                <li>GCG, Code of Conduct/Ethics, SLA, KPI</li>
+                                <li>Pendampingan ISO 9001, 14001, 37001, 45001, 27001</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Tata%20Kelola%20Perusahaan%20dan%20ISO." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 18 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>18. Financial Advisory, Forensic Audit & Business Recovery</h3>
+                        <p class="card-desc">Layanan analisis keuangan dan audit hukum, hingga restrukturisasi penyelamatan bisnis yang terpuruk.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Audit Hukum, Investigatif, Forensik, Internal, Due Diligence</li>
+                                <li>Valuasi Perusahaan/Aset, Financial Modeling</li>
+                                <li>Restrukturisasi Keuangan, Turnaround Management, Debt Restructuring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Audit%20Forensik%20dan%20Pemulihan%20Bisnis." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 19 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>19. Auction, Asset Recovery & Enforcement</h3>
+                        <p class="card-desc">Layanan pengamanan hukum untuk lelang, penyitaan, penelusuran aset, dan eksekusi putusan.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Pendampingan Lelang Eksekusi, Sukarela, KPKNL, Kepailitan</li>
+                                <li>Asset Tracing, Pemblokiran, Pengamanan & Pemulihan Kerugian</li>
+                                <li>Eksekusi Putusan Pengadilan, Fidusia, Arbitrase & Putusan Asing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Lelang%20dan%20Pemulihan%20Aset." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 20 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>20. Maritime, Shipping & Admiralty Law</h3>
+                        <p class="card-desc">Penyelesaian sengketa kelautan, pelayaran komersial, klaim kargo, hingga hipotek armada kapal.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Sengketa Pelayaran, Cargo Claim, Bill of Lading, Marine Insurance</li>
+                                <li>Hipotek, Registrasi, Pengadaan, & Pembiayaan Kapal</li>
+                                <li>Ship Arrest, Salvage, Pencemaran Laut, Offshore Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Maritim%20dan%20Pelayaran." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 21 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>21. Aviation & Aerospace Law</h3>
+                        <p class="card-desc">Hukum penerbangan meliputi leasing pesawat, operasional maskapai, sengketa kargo, dan layanan bandara.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Leasing/Pembiayaan/Registrasi Pesawat, AOC, Ground Handling</li>
+                                <li>Sengketa Penerbangan, Passenger/Cargo Claims</li>
+                                <li>Regulasi Drone, Airport Development & Concession</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Penerbangan." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 22 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>22. Customs, Excise & International Trade</h3>
+                        <p class="card-desc">Pendampingan penuh terkait kepabeanan, bea masuk, cukai, serta regulasi perdagangan lintas batas.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Sengketa Kepabeanan, Bea Masuk/Keluar, Cukai, Keberatan</li>
+                                <li>Import, Export, Free Trade Agreement, Rules of Origin</li>
+                                <li>Anti Dumping, Safeguard, Import/Export Licensing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Kepabeanan%20dan%20Perdagangan%20Internasional." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 23 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>23. Competition & Antitrust Law</h3>
+                        <p class="card-desc">Kepatuhan pada hukum persaingan usaha untuk mencegah monopoli, kartel, dan sanksi dari KPPU.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Pendampingan di Komisi Pengawas Persaingan Usaha (KPPU)</li>
+                                <li>Penanganan Kartel, Monopoli, Predatory Pricing, Tender Conspiracy</li>
+                                <li>Merger Notification & Competition Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Persaingan%20Usaha." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 24 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>24. Consumer Protection & Product Liability</h3>
+                        <p class="card-desc">Perlindungan konsumen dan tanggung jawab produk bagi manufaktur maupun penyedia jasa e-commerce.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Sengketa Konsumen (BPSK) & E-Commerce Dispute</li>
+                                <li>Product Recall, Liability, Safety, Labeling Compliance</li>
+                                <li>Class Action & Representative Action</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Perlindungan%20Konsumen." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 25 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>25. Healthcare, Pharmaceutical & Medical Law</h3>
+                        <p class="card-desc">Bantuan hukum di sektor kesehatan termasuk perizinan klinik/RS, sengketa medis, dan regulasi farmasi.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Sengketa RS/Klinik, Malapraktik (Medical Malpractice), Informed Consent</li>
+                                <li>Telemedicine, Hospital/Pharmacy Compliance</li>
+                                <li>Regulasi Alat Kesehatan, BPJS & Sengketa Asuransi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Kesehatan%20dan%20Farmasi." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 26 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>26. IT, Artificial Intelligence & Data Protection Law</h3>
+                        <p class="card-desc">Kepatuhan Perlindungan Data Pribadi (PDP), kontrak perangkat lunak, hingga regulasi aset kripto dan AI.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Data Privacy Compliance, Data Breach Response, AI Compliance</li>
+                                <li>Software Licensing, Cloud Computing, Smart Contract, Digital Signature</li>
+                                <li>Fintech, Blockchain, Crypto, NFT, Digital Asset Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20TI,%20AI,%20dan%20Data%20Pribadi." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 27 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>27. Environmental, Climate Change & Sustainability Law</h3>
+                        <p class="card-desc">Pengelolaan kepatuhan hukum lingkungan, ESG, perdagangan karbon, dan investasi hijau terbarukan.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Persetujuan Lingkungan, AMDAL, UKL-UPL, Sengketa Lingkungan</li>
+                                <li>Limbah B3, Carbon Trading / Credit, ESG Compliance</li>
+                                <li>Green Investment & Renewable Energy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Lingkungan%20dan%20ESG." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 28 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>28. Education, Foundation & Non-Profit Law</h3>
+                        <p class="card-desc">Konsultasi legal untuk pendirian instansi pendidikan, manajemen dana abadi, dan regulasi organisasi sosial.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Pendirian Yayasan, Perkumpulan, Universitas, Sekolah, Pesantren</li>
+                                <li>Organisasi Sosial & Internasional, Charity Compliance</li>
+                                <li>Donor/Grant Agreement, Endowment Fund (Dana Abadi)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Pendidikan%20dan%20Yayasan." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 29 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>29. Hospitality, Tourism & Entertainment Law</h3>
+                        <p class="card-desc">Layanan perizinan sektor pariwisata, manajemen perhotelan, resor, serta industri restoran dan hiburan.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Hotel, Resort, Villa, Restaurant, Beach/Night Club, Spa</li>
+                                <li>Travel Agency, Event Organizer, Tourism Investment</li>
+                                <li>Hotel Management Agreement, Franchise, Entertainment/Liquor Licensing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Pariwisata%20dan%20Perhotelan." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 30 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>30. Sports, Media & Entertainment Law</h3>
+                        <p class="card-desc">Pendampingan hukum eksklusif untuk atlet, produksi media digital, hak siar, dan manajemen figur publik.</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Kontrak/Transfer Atlet & Pelatih, Esports, Sponsor Agreement</li>
+                                <li>Broadcasting Rights, Music Licensing, Film Production, Talent Agreement</li>
+                                <li>Media Dispute, Defamation, Digital Content, Influencer Agreement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hukum%20Olahraga%20dan%20Media." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 31 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>31. Government Relations & Public Policy</h3>
+                        <p class="card-desc">Analisis kebijakan publik, pengadaan tender pemerintah, dan penyusunan draf legislasi hukum (drafting).</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Regulatory Compliance, Government Affairs, Public Policy Advisory</li>
+                                <li>Legislative Drafting, Judicial Review, Regulatory Impact Assessment</li>
+                                <li>Public Procurement, Government Contract, PPP/KPBU</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Hubungan%20Pemerintah%20dan%20Kebijakan%20Publik." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
+                </div>
+
+                <!-- 32 -->
+                <div class="service-card expandable-card">
+                    <div>
+                        <h3>32. Family Office, Wealth Management & Private Clients</h3>
+                        <p class="card-desc">Layanan perlindungan dan strukturisasi aset keluarga eksklusif untuk kelas *High Net Worth Individual* (HNWI).</p>
+                        <span class="card-toggle">LIHAT DETAIL +</span>
+                        <div class="service-details">
+                            <ul>
+                                <li>Wealth Structuring, Succession Planning, Estate Planning</li>
+                                <li>Family Office & Trust Advisory, Asset Protection, HNWI Advisory</li>
+                                <li>Private Investment Structuring, International Tax, Cross Border Estate</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20ingin%20konsultasi%20mengenai%20Family%20Office%20dan%20Wealth%20Management." target="_blank" class="btn btn-outline-gold translate-ignore">Konsultasi WhatsApp</a>
                 </div>
 
             </div>
@@ -414,16 +835,17 @@
     </div>
 
     <!-- ==========================================
-         HALAMAN 3: KASUS FULL
+         HALAMAN 3: STUDI KASUS (Perubahan Nama)
          ========================================== -->
-    <div id="view-kasus" class="page-view">
+    <div id="view-studi-kasus" class="page-view">
         <div class="page-header">
-            <h1>Publikasi & Kasus</h1>
-            <p>Arsip lengkap materi hukum, penyelesaian perkara, dan studi kasus dari firma kami.</p>
+            <h1>Studi Kasus</h1>
+            <p>Arsip penyelesaian sengketa, bedah kasus hukum, dan portofolio praktik terbaik dari firma kami.</p>
         </div>
         
         <section class="kasus-section section-padding">
             <div class="articles-grid">
+                <!-- Nanti Jekyll akan mengisi otomatis bagian ini ketika Headless CMS digunakan -->
                 {% for post in site.posts %}
                 <div class="article-card">
                     <img src="{{ post.image }}" alt="Gambar Materi" class="article-img">
@@ -440,7 +862,34 @@
     </div>
 
     <!-- ==========================================
-         HALAMAN 4: TIM KAMI FULL (STRUKTUR TERBARU & FOLDER LOKAL)
+         HALAMAN 4: ARTIKEL (Halaman Baru)
+         ========================================== -->
+    <div id="view-artikel" class="page-view">
+        <div class="page-header">
+            <h1>Artikel Hukum</h1>
+            <p>Publikasi opini, bedah regulasi terbaru, informasi edukasi publik, dan berita firma.</p>
+        </div>
+        
+        <section class="kasus-section section-padding">
+            <div class="articles-grid">
+                <!-- Struktur placeholder untuk artikel -->
+                {% for post in site.posts %}
+                <div class="article-card">
+                    <img src="{{ post.image }}" alt="Gambar Materi" class="article-img">
+                    <div class="article-content">
+                        <span class="article-meta">{{ post.date | date: "%d %b %Y" }} • {{ post.category }}</span>
+                        <h3 class="article-title">{{ post.title }}</h3>
+                        <p class="article-excerpt">{{ post.content | strip_html | truncatewords: 20 }}</p>
+                        <a href="{{ post.url | relative_url }}" class="read-more">Baca Selengkapnya &rarr;</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         HALAMAN 5: TIM KAMI FULL
          ========================================== -->
     <div id="view-tim" class="page-view">
         <div class="page-header">
@@ -451,84 +900,72 @@
         <section class="team-section section-padding">
             <div class="team-grid">
                 
-                <!-- 1. Managing Partner (PNG) -->
                 <div class="team-member">
                     <img src="images/indra.png" alt="Indra Setiawan" class="team-img">
                     <h3>Indra Setiawan , S.T., S.H., M.H., Ph.D., CTLC., CMLC., Mediator, Kurator-Pengurus</h3>
                     <p class="role">Managing Partner</p>
                 </div>
 
-                <!-- 2. Partner (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/terry.jpeg" alt="Terry George Waas, S.H." class="team-img">
                     <h3>Terry George Waas, S.H.</h3>
                     <p class="role">Partner</p>
                 </div>
 
-                <!-- 3. Ketua Bidang Perpajakan (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/andrianus.jpeg" alt="Andrianus, S.E., BKP, CTA, CTT" class="team-img">
                     <h3>Andrianus, S.E., BKP, CTA, CTT</h3>
                     <p class="role">Ketua Bidang Perpajakan</p>
                 </div>
 
-                <!-- 4. Associate (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/rony.jpeg" alt="Rony Piwulang Jagad, S.H." class="team-img">
                     <h3>Rony Piwulang Jagad, S.H.</h3>
                     <p class="role">Associate</p>
                 </div>
 
-                <!-- 5. Kepala Tax Accounting (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/lusia.jpeg" alt="Lusia., S.Akun, CTT" class="team-img">
                     <h3>Lusia., S.Akun, CTT</h3>
                     <p class="role">Kepala Tax Accounting</p>
                 </div>
 
-                <!-- 6. Legal Staff (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/heryanto.jpeg" alt="Heryanto Tagur, S.H." class="team-img">
                     <h3>Heryanto Tagur, S.H.</h3>
                     <p class="role">Legal Staff</p>
                 </div>
 
-                <!-- 7. Legal Staff (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/niken.jpeg" alt="Niken Eka Setiawan, S.H." class="team-img">
                     <h3>Niken Eka Setiawan, S.H.</h3>
                     <p class="role">Legal Staff</p>
                 </div>
 
-                <!-- 8. Legal Staff (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/ahmat.jpeg" alt="Ahmat Kholid Arwani, S.H." class="team-img">
                     <h3>Ahmat Kholid Arwani, S.H.</h3>
                     <p class="role">Legal Staff</p>
                 </div>
 
-                <!-- 9. Legal Staff (Ayunda - Baru) (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/ayunda.jpeg" alt="Ayunda Putri Shalsabilla, S.H." class="team-img">
                     <h3>Ayunda Putri Shalsabilla, S.H.</h3>
                     <p class="role">Legal Staff</p>
                 </div>
 
-                <!-- 10. Tax accounting (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/aisyah.jpeg" alt="Aisyah Choyru Jannah" class="team-img">
                     <h3>Aisyah Choyru Jannah</h3>
                     <p class="role">Tax accounting</p>
                 </div>
 
-                <!-- 11. Staff (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/marshal.jpeg" alt="Marshal Rano Pratama" class="team-img">
                     <h3>Marshal Rano Pratama</h3>
                     <p class="role">Staff</p>
                 </div>
 
-                <!-- 12. Staff (Adellia - Baru) (Disesuaikan menjadi .jpeg) -->
                 <div class="team-member">
                     <img src="images/adellia.jpeg" alt="Adellia Putri Nadhira" class="team-img">
                     <h3>Adellia Putri Nadhira</h3>
@@ -569,7 +1006,7 @@
     </footer>
 
     <!-- ==========================================
-         FLOATING WHATSAPP BUTTON (Umum)
+         FLOATING WHATSAPP BUTTON
          ========================================== -->
     <a href="https://wa.me/6285842080691?text=Halo%20Admin%20Global%20Lawfirm.%20Saya%20mendapatkan%20nomor%20ini%20dari%20website%20dan%20ingin%20berkonsultasi%20mengenai%20permasalahan%20hukum.%20Boleh%20dibantu%20informasi%20lebih%20lanjut%3F" target="_blank" class="wa-float" title="Konsultasi via WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -580,8 +1017,6 @@
     <!-- ==========================================
          SCRIPT JAVASCRIPT
          ========================================== -->
-    
-    <!-- Script Google Translate (Disembunyikan tapi tetap memproses) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -649,6 +1084,5 @@
             });
         });
     </script>
-
 </body>
 </html>
