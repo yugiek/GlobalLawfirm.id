@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: yugiek/GlobalLawfirm.id
+  branch: main
+
+# Pengaturan folder gambar
+media_folder: "images"
+public_folder: "images"
+
+# Pengaturan postingan
+collections:
+  - name: "postingan"
+    label: "Materi & Publikasi"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Tanggal Terbit", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Kategori", name: "category", widget: "select", options: ["Artikel", "Studi Kasus"]}
+      - {label: "Gambar Sampul", name: "image", widget: "image"}
+      - {label: "Isi Konten", name: "body", widget: "markdown"}
