@@ -59,7 +59,6 @@
         /* HERO SECTION */
         .hero {
             position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; padding: 0 60px;
-            /* SUMBER GAMBAR LOKAL: Pastikan upload gambar bernama hero-bg.png ke dalam folder images */
             background: url('images/hero-bg.png') center/cover no-repeat;
         }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(13, 17, 23, 0.9) 0%, rgba(13, 17, 23, 0.6) 50%, rgba(13, 17, 23, 0.2) 100%); z-index: 1; }
@@ -169,7 +168,6 @@
         </a>
         <nav>
             <ul>
-                <!-- PERUBAHAN NAVIGASI -->
                 <li><a onclick="showPage('view-home')" class="nav-btn active-link">Beranda</a></li>
                 <li><a onclick="showPage('view-layanan')" class="nav-btn">Layanan</a></li>
                 <li><a onclick="showPage('view-studi-kasus')" class="nav-btn">Studi Kasus</a></li>
@@ -252,7 +250,6 @@
             </div>
             <div class="team-grid single">
                 <div class="team-member" onclick="showPage('view-tim')">
-                    <!-- FOTO INDRA (.png) -->
                     <img src="images/indra.png" alt="Indra Setiawan" class="team-img">
                     <h3>Indra Setiawan , S.T., S.H., M.H., Ph.D., CTLC., CMLC., Mediator, Kurator-Pengurus</h3>
                     <p class="role">Managing Partner</p>
@@ -845,7 +842,6 @@
         
         <section class="kasus-section section-padding">
             <div class="articles-grid">
-                <!-- Tambahkan baris assign ini untuk memfilter khusus Studi Kasus -->
                 {% assign kasus_posts = site.posts | where: "category", "Studi Kasus" %}
                 {% for post in kasus_posts %}
                 <div class="article-card">
@@ -860,6 +856,7 @@
                 {% endfor %}
             </div>
         </section>
+    </div> <!-- PENAMBAHAN TAG PENUTUP DIV DI SINI -->
 
     <!-- ==========================================
          HALAMAN 4: ARTIKEL (Halaman Baru)
@@ -872,7 +869,6 @@
         
         <section class="kasus-section section-padding">
             <div class="articles-grid">
-                <!-- Tambahkan baris assign ini untuk memfilter khusus Artikel -->
                 {% assign artikel_posts = site.posts | where: "category", "Artikel" %}
                 {% for post in artikel_posts %}
                 <div class="article-card">
@@ -887,6 +883,7 @@
                 {% endfor %}
             </div>
         </section>
+    </div> <!-- PENAMBAHAN TAG PENUTUP DIV DI SINI -->
 
     <!-- ==========================================
          HALAMAN 5: TIM KAMI FULL
