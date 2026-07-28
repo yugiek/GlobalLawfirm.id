@@ -845,8 +845,9 @@
         
         <section class="kasus-section section-padding">
             <div class="articles-grid">
-                <!-- Nanti Jekyll akan mengisi otomatis bagian ini ketika Headless CMS digunakan -->
-                {% for post in site.posts %}
+                <!-- Tambahkan baris assign ini untuk memfilter khusus Studi Kasus -->
+                {% assign kasus_posts = site.posts | where: "category", "Studi Kasus" %}
+                {% for post in kasus_posts %}
                 <div class="article-card">
                     <img src="{{ post.image }}" alt="Gambar Materi" class="article-img">
                     <div class="article-content">
@@ -859,7 +860,6 @@
                 {% endfor %}
             </div>
         </section>
-    </div>
 
     <!-- ==========================================
          HALAMAN 4: ARTIKEL (Halaman Baru)
@@ -872,8 +872,9 @@
         
         <section class="kasus-section section-padding">
             <div class="articles-grid">
-                <!-- Struktur placeholder untuk artikel -->
-                {% for post in site.posts %}
+                <!-- Tambahkan baris assign ini untuk memfilter khusus Artikel -->
+                {% assign artikel_posts = site.posts | where: "category", "Artikel" %}
+                {% for post in artikel_posts %}
                 <div class="article-card">
                     <img src="{{ post.image }}" alt="Gambar Materi" class="article-img">
                     <div class="article-content">
@@ -886,7 +887,6 @@
                 {% endfor %}
             </div>
         </section>
-    </div>
 
     <!-- ==========================================
          HALAMAN 5: TIM KAMI FULL
