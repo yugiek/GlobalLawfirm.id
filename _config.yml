@@ -1,7 +1,8 @@
 title: Global Lawfirm
-description: "Full Service Legal Solutions terpadu bagi individu, korporasi, PMA, lembaga, hingga instansi pemerintah."
-url: ""
+description: "Firma hukum terkemuka di Sidoarjo yang memberikan layanan litigasi, korporasi, kepailitan, perizinan, hingga pendampingan hukum komprehensif."
+url: "https://globallawfirm.id"
 baseurl: ""
+logo: "/images/hero-bg.png"
 
 # Pengaturan agar Markdown diproses dengan rapi
 markdown: kramdown
@@ -10,8 +11,3 @@ markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-
-# Pengaturan SEO Tag
-title: Global Lawfirm
-description: "Firma hukum terkemuka di Sidoarjo yang memberikan layanan litigasi, korporasi, kepailitan, perizinan, hingga pendampingan hukum komprehensif."
-logo: "/images/hero-bg.png"
