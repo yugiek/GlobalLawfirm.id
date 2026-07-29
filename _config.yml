@@ -5,3 +5,13 @@ baseurl: ""
 
 # Pengaturan agar Markdown diproses dengan rapi
 markdown: kramdown
+
+# Pengaturan Plugin SEO
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pengaturan SEO Tag
+title: Global Lawfirm
+description: "Firma hukum terkemuka di Sidoarjo yang memberikan layanan litigasi, korporasi, kepailitan, perizinan, hingga pendampingan hukum komprehensif."
+logo: "/images/hero-bg.png"
