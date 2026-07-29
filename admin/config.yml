@@ -19,5 +19,6 @@ collections:
       - {label: "Judul", name: "title", widget: "string"}
       - {label: "Tanggal Terbit", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Kategori", name: "category", widget: "select", options: ["Artikel", "Studi Kasus"]}
+      - {label: "Deskripsi Singkat (SEO Google)", name: "description", widget: "text", required: false, hint: "Tulis 1-2 kalimat menarik (maks 150 huruf) agar orang mau klik saat melihatnya di Google."}
       - {label: "Gambar Sampul", name: "image", widget: "image"}
       - {label: "Isi Konten", name: "body", widget: "markdown"}
