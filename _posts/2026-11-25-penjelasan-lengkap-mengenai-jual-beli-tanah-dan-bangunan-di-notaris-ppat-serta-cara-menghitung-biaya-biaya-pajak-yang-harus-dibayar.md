@@ -53,7 +53,7 @@ Pembeli pada prinsipnya dikenakan BPHTB atas perolehan hak atas tanah dan bangun
 
 Besaran BPHTB dihitung berdasarkan tarif yang ditetapkan pemerintah daerah, dengan memperhatikan Nilai Perolehan Objek Pajak Tidak Kena Pajak (NPOPTKP).
 
-#### Rumus sederhananya:
+#### Rumus sederhananya: 
 
 #### BPHTB = Tarif BPHTB × (NPOP − NPOPTKP).
 
