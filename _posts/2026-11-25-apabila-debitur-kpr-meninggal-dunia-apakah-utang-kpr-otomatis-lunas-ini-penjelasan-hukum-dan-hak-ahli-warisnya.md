@@ -4,7 +4,7 @@ title: Apabila Debitur KPR Meninggal Dunia, Apakah Utang KPR Otomatis Lunas? Ini
 date: 2026-11-26
 category: Artikel
 description: Apabila Debitur KPR Meninggal Dunia, Apakah Utang KPR Otomatis Lunas?
-image: /images/pasted-image-1795694707368.png
+image: /images/pasted-image-1795695037978.png
 ---
 
 **Kredit Pemilikan Rumah (KPR) merupakan** salah satu fasilitas pembiayaan yang banyak digunakan masyarakat untuk memiliki rumah. Dalam pelaksanaannya, KPR biasanya disertai dengan asuransi jiwa kredit yang bertujuan memberikan perlindungan apabila debitur meninggal dunia sebelum seluruh kewajiban kreditnya dilunasi.
