@@ -13,7 +13,7 @@ Namun, masih banyak masyarakat yang belum memahami perbedaan antara biaya jasa n
 
 Akibatnya, tidak sedikit masyarakat yang menganggap seluruh biaya tersebut merupakan satu kesatuan biaya notaris. Padahal, masing-masing memiliki dasar hukum, fungsi, dan pihak penerima yang berbeda.
 
-**Sebagai contoh, apabila seseorang menjual rumah dengan harga Rp500.000.000, berapa biaya yang harus dipersiapkan oleh penjual dan pembeli?**
+**Sebagai contoh, apabila seseorang menjual rumah dengan harga Rp.500.000.000,- berapa biaya yang harus dipersiapkan oleh penjual dan pembeli?**
 
 ## Memahami Perbedaan Notaris dan PPAT Dalam Jual Beli Tanah dan Bangunan
 
@@ -39,11 +39,11 @@ Penjual pada prinsipnya dikenakan Pajak Penghasilan atas pengalihan hak atas tan
 
 **Contoh:**
 
-Harga jual rumah: Rp500.000.000
+Harga jual rumah: Rp.500.000.000,-
 
-Maka, PPh final: 2,5% × Rp500.000.000 = Rp12.500.000.
+Maka, PPh final: 2,5% × Rp.500.000.000,- = Rp.12.500.000,-
 
-Dengan demikian, apabila menggunakan dasar perhitungan tersebut, penjual harus memperhitungkan PPh final sebesar Rp12.500.000.
+Dengan demikian, apabila menggunakan dasar perhitungan tersebut, penjual harus memperhitungkan PPh final sebesar Rp.12.500.000,-
 
 #### B. Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB) bagi Pembeli
 
