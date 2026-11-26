@@ -55,8 +55,6 @@ Besaran BPHTB dihitung berdasarkan tarif yang ditetapkan pemerintah daerah, deng
 
 #### Rumus sederhananya:
 
-#### 
-
 #### BPHTB = Tarif BPHTB × (NPOP − NPOPTKP).
 
 Oleh karena itu, jumlah BPHTB tidak dapat ditentukan hanya berdasarkan harga jual rumah tanpa mengetahui NPOPTKP dan ketentuan daerah tempat objek berada.
@@ -82,8 +80,6 @@ Biaya pendaftaran peralihan hak atau balik nama merupakan biaya administrasi per
 Dengan demikian, biaya tersebut bukan merupakan honorarium atau keuntungan pribadi notaris maupun PPAT.
 
 ## Pentingnya Meminta Rincian Biaya Secara Terpisah
-
-## 
 
 Sebelum melakukan transaksi jual beli rumah, masyarakat sebaiknya meminta rincian biaya secara tertulis.
 
