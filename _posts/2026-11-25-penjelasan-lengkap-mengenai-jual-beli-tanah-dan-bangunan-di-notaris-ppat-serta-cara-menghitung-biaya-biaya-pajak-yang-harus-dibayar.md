@@ -4,7 +4,7 @@ title: Penjelasan Lengkap Mengenai Jual Beli Tanah dan Bangunan di Notaris & PPA
 date: 2026-11-26
 category: Artikel
 description: Jual Beli Rumah Rp500 Juta, Berapa Biaya Notaris, PPAT, dan Pajak yang Harus Dibayar?
-image: /images/pasted-image-1795696705616.png
+image: /images/pasted-image-1795696936178.png
 ---
 
 **Jual beli rumah merupakan** salah satu transaksi hukum yang melibatkan sejumlah biaya, baik biaya administrasi, pajak, maupun jasa pejabat yang berwenang dalam proses peralihan hak atas tanah dan bangunan.
