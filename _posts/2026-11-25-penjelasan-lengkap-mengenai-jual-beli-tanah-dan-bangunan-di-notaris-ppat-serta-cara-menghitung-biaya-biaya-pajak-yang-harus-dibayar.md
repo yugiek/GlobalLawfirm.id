@@ -13,9 +13,7 @@ Namun, masih banyak masyarakat yang belum memahami perbedaan antara biaya jasa n
 
 Akibatnya, tidak sedikit masyarakat yang menganggap seluruh biaya tersebut merupakan satu kesatuan biaya notaris. Padahal, masing-masing memiliki dasar hukum, fungsi, dan pihak penerima yang berbeda.
 
-#### Sebagai contoh, apabila seseorang menjual rumah dengan harga Rp500.000.000, berapa biaya yang harus dipersiapkan oleh penjual dan pembeli?
-
-#### 
+**Sebagai contoh, apabila seseorang menjual rumah dengan harga Rp500.000.000, berapa biaya yang harus dipersiapkan oleh penjual dan pembeli?**
 
 ## Memahami Perbedaan Notaris dan PPAT Dalam Jual Beli Tanah dan Bangunan
 
